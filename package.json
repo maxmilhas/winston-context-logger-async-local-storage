@@ -1,8 +1,8 @@
 {
-  "name": "boilerplate-base",
-  "description": "This project is just a template for creation of new projects",
-  "version": "0.0.0",
-  "private": true,
+  "name": "winston-context-logger-async-local-storage",
+  "description": "Open telemetry integration with context-logger",
+  "version": "0.1.6",
+  "private": false,
   "author": {
     "name": "Thiago O Santos <tos.oliveira@gmail.com>"
   },
@@ -62,17 +62,22 @@
   },
   "repository": {
     "type": "git",
-    "url": "https://github.com/codibre/boilerplate-base.git"
+    "url": "https://github.com/maxmilhas/winston-context-logger-async-local-storage.git"
   },
-  "homepage": "https://github.com/codibre/boilerplate-base#readme",
+  "homepage": "https://github.com/maxmilhas/winston-context-logger-async-local-storage#readme",
   "bugs": {
-    "url": "https://github.com/codibre/boilerplate-base/issues"
+    "url": "https://github.com/maxmilhas/winston-context-logger-async-local-storage/issues"
   },
   "keywords": [],
   "license": "MIT",
+  "peerDependencies": {
+    "winston-context-logger": "*"
+  },
   "devDependencies": {
     "@codibre/confs": "^1.1.2",
     "@types/jest": "^27.4.1",
+    "@types/node-cleanup": "^2.1.2",
+    "@types/uuid": "^8.3.4",
     "@typescript-eslint/eslint-plugin": "^5.28.0",
     "@typescript-eslint/parser": "^5.28.0",
     "del-cli": "^3.0.1",
@@ -90,7 +95,13 @@
     "ts-node": "^10.6.0",
     "typedoc": "^0.22.17",
     "typedoc-plugin-markdown": "^3.12.1",
-    "typescript": "^4.5.2"
+    "typescript": "^4.5.2",
+    "winston-context-logger": "^0.1.9"
   },
-  "dependencies": {}
+  "dependencies": {
+    "@types/read-pkg": "^4.0.0",
+    "node-cleanup": "^2.1.2",
+    "read-pkg": "^4.0.1",
+    "uuid": "^9.0.0"
+  }
 }

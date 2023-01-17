@@ -2,10 +2,8 @@
 
 name: lint
 on:
-  push:
-    branches: [master]
   pull_request:
-    branches: [master]
+    branches: [main]
 
 jobs:
   lint:
@@ -13,7 +11,7 @@ jobs:
     steps:
       - uses: actions/checkout@v2
       - name: Use Node.js
-        uses: actions/setup-node@v1
+        uses: actions/setup-node@v3
       - name: install
         run: npm ci
       - name: Lint
