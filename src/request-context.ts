@@ -16,20 +16,14 @@ export class RequestContext {
 		public readonly routine: string,
 	) {}
 
-	static async setContext(
-		routine: string,
-		correlationId: string | undefined,
-		initialize?: () => Promise<void> | void,
-	) {
+	static setContext(routine: string, correlationId: string | undefined) {
 		this.storage.enterWith(new RequestContext(correlationId || v4(), routine));
-		await initialize?.();
 	}
 
-	subContext(subRoutine: string, initialize?: () => Promise<void> | void) {
+	subContext(subRoutine: string) {
 		return RequestContext.setContext(
 			`${this.routine}.${subRoutine}`,
 			this.correlationId,
-			initialize,
 		);
 	}
 
@@ -63,19 +57,12 @@ export class AsyncLocalStorageContextProvider<T extends object>
 		return AsyncLocalStorageContextProvider.currentContext();
 	}
 
-	static subContext(
-		subRoutine: string,
-		initialize?: () => Promise<void> | void,
-	) {
-		return this.currentContext().subContext(subRoutine, initialize);
+	static subContext(subRoutine: string) {
+		return this.currentContext().subContext(subRoutine);
 	}
 
-	subContext<R>(
-		subRoutine: string,
-		callback: () => Promise<R> | R,
-		initialize?: () => Promise<void> | void,
-	) {
-		return AsyncLocalStorageContextProvider.subContext(subRoutine, initialize);
+	subContext(subRoutine: string) {
+		return AsyncLocalStorageContextProvider.subContext(subRoutine);
 	}
 
 	get correlationId() {
