@@ -1,7 +1,7 @@
 {
   "name": "winston-context-logger-async-local-storage",
   "description": "Open telemetry integration with context-logger",
-  "version": "1.0.1",
+  "version": "1.1.0",
   "private": false,
   "author": {
     "name": "Thiago O Santos <tos.oliveira@gmail.com>"

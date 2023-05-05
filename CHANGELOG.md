@@ -1,3 +1,10 @@
+# [1.1.0](https://github.com/maxmilhas/winston-context-logger-async-local-storage/compare/v1.0.1...v1.1.0) (2023-05-05)
+
+
+### Features
+
+* adding contextualize method ([0177519](https://github.com/maxmilhas/winston-context-logger-async-local-storage/commit/01775192a977813b687355fea9eed1162339e9ed))
+
 ## [1.0.1](https://github.com/maxmilhas/winston-context-logger-async-local-storage/compare/v1.0.0...v1.0.1) (2023-01-17)
 
 
