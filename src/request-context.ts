@@ -46,6 +46,9 @@ export class RequestContext {
 const loggerContextSymbol = Symbol('CoggerContext');
 const rootContext = new RequestContext('root', 'root');
 
+// eslint-disable-next-line @typescript-eslint/no-explicit-any
+export type Func = (...args: any[]) => any;
+
 export class AsyncLocalStorageContextProvider<T extends object>
 	implements ContextInfoProvider<T>
 {
@@ -82,6 +85,18 @@ export class AsyncLocalStorageContextProvider<T extends object>
 
 	onContextEnd(callback: () => void): void {
 		onContextEndList.push(callback);
+	}
+
+	contextualize<Callback extends Func>(callback: Callback) {
+		const { correlationId, routine } = this;
+		const info = this.getContextInfo();
+		return ((...args: Parameters<Callback>) => {
+			RequestContext.setContext(routine, correlationId);
+			if (info) {
+				this.setContextInfo(info);
+			}
+			return callback(...args);
+		}) as Callback;
 	}
 }
 
