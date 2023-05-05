@@ -104,3 +104,8 @@ nodeCleanup(RequestContext.flush.bind(RequestContext));
 
 export const asyncLocalStorageContextProvider =
 	new AsyncLocalStorageContextProvider();
+
+export const contextualize =
+	asyncLocalStorageContextProvider.contextualize.bind(
+		asyncLocalStorageContextProvider,
+	);
