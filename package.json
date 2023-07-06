@@ -76,7 +76,6 @@
   "devDependencies": {
     "@codibre/confs": "^1.1.2",
     "@types/jest": "^27.4.1",
-    "@types/node-cleanup": "^2.1.2",
     "@types/uuid": "^8.3.4",
     "@typescript-eslint/eslint-plugin": "^5.28.0",
     "@typescript-eslint/parser": "^5.28.0",
@@ -100,7 +99,6 @@
   },
   "dependencies": {
     "@types/read-pkg": "^4.0.0",
-    "node-cleanup": "^2.1.2",
     "read-pkg": "^4.0.1",
     "uuid": "^9.0.0"
   }
