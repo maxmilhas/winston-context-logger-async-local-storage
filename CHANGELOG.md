@@ -1,3 +1,10 @@
+## [1.2.1](https://github.com/maxmilhas/winston-context-logger-async-local-storage/compare/v1.2.0...v1.2.1) (2023-07-06)
+
+
+### Bug Fixes
+
+* removing node-cleanup, as it has unexpected behavior ([#1](https://github.com/maxmilhas/winston-context-logger-async-local-storage/issues/1)) ([0b958a2](https://github.com/maxmilhas/winston-context-logger-async-local-storage/commit/0b958a29acf2b36b8093b6e48918f9a03261574f))
+
 # [1.2.0](https://github.com/maxmilhas/winston-context-logger-async-local-storage/compare/v1.1.0...v1.2.0) (2023-05-05)
 
 
